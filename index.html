@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 80px; /* Space for fixed navbar */
+            background-color: black;
+            color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .custom-navbar-height {
+            height: 80px; /* Adjust the height as needed */
+        }
+
+        .custom-navbar-height .navbar-brand {
+            line-height: 70px; /* Adjust the line height to match the navbar height for vertical centering */
+            color: white; /* Make the logo text color white */
+            font-weight: bold; /* Make the logo text bold */
+            font-size: 30px;
+        }
+
+        .custom-navbar-height .nav-link {
+            line-height: 70px; /* Adjust the line height to match the navbar height for vertical centering */
+            font-weight: bold; /* Make the link text bold */
+            color: white; /* Make the link text color white */
+            font-size: 1.2rem; /* Increase the font size */
+        }
+
+        .custom-navbar-height .nav-link:hover {
+            background-color: rgb(56, 53, 53); /* Change the background color on hover */
+            color: white; /* Ensure the text color remains white */
+        }
+
+        .custom-navbar-height .social-icons .nav-link {
+          padding: 10px;
+            /* Adjust padding for social icons */
+            font-size: 1.5rem; /* Increase the font size of the icons */
+            background-color: transparent; /* Prevent background color change on hover */
+        }
+
+        .custom-navbar-height .fa-facebook-f {
+            color: #3b5998; /* Facebook color */
+        }
+
+        .custom-navbar-height .fa-instagram {
+            color: #E1306C; /* Instagram color */
+        }
+
+        .custom-navbar-height .fa-twitter {
+            color: #1DA1F2; /* Twitter color */
+        }
+
+        .custom-navbar-height .fa-youtube {
+            color: #FF0000; /* YouTube color */
+        }
+
+        .background-image {
+            position: relative;
+            height: 700px; /* Adjust height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
+        }
+
+        .background-text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            z-index: 1;
+        }
+        .background-text p {
+            white-space: nowrap; /* Prevent the text from wrapping */
+            overflow: hidden; /* Ensure text stays within the box */
+            animation: typing 5s steps(50, end) forwards; 
+        }
+        .background-text:hover p {           
+            
+    animation: typing 5s steps(50, end) forwards; /* Start animation on hover */
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%; /* Adjust to fit your text */
+            }
+        }
+
+        .background-text img {
+            margin-top: 20px;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: black;
+            flex: 1; /* Ensure the flex container takes available space */
+        }
+
+        .flex-item {
+            flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid lightslategrey;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .footer {
+            background-color:#212529; /* Dark background color */
+            color: white;
+            padding: 4em; /* Padding for top and bottom */
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 14vh;
+            text-align: center;
+
+        }
+
+        .footer p {
+            margin:3000re ;
+        }
+
+        .footer .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer .social-icons .nav-link {
+            padding: 0 10px; /* Adjust padding for social icons */
+            font-size: 1.5rem; /* Increase the font size of the icons */
+            background-color: transparent; /* Prevent background color change on hover */
+        }
+
+        .footer .fa-facebook-f {
+            color: #3b5998; /* Facebook color */
+        }
+
+        .footer .fa-instagram {
+            color: #E1306C; /* Instagram color */
+        }
+
+        .footer .fa-twitter {
+            color: #1DA1F2; /* Twitter color */
+        }
+
+        .footer .fa-youtube {
+            color: #FF0000; /* YouTube color */
+        }
+
+        @media (max-width: 768px) {
+            .flex-item {
+                flex: 1 1 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark custom-navbar-height fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Swagatika Pati</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skill.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item social-icons">
+                        <a class="nav-link" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="nav-item social-icons">
+                        <a class="nav-link" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item social-icons">
+                        <a class="nav-link" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item social-icons">
+                        <a class="nav-link" href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="background-image">
+        <img src="image/shutterstock_1988260253-1024x576.jpg" class="border rounded" alt="Background Image">
+        <div class="background-overlay"></div>
+        <div class="background-text">
+            <p>Welcome to my portfolio website</p>
+            <img src="image/images.jpeg" alt="Profile Image"/>
+        </div>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <h1>About Me</h1>
+            <p>
+                Hello! I am currently a student at Digital Career Institute (DCI), where I am expanding my knowledge and skills in the field of technology. Prior to my studies at DCI, I worked as a PHP developer, where I honed my skills in backend development, creating dynamic and responsive web applications. My passion for technology and problem-solving drives me to continuously learn and improve. Through my studies and projects at DCI, I am gaining hands-on experience with modern technologies and frameworks that complement my existing skills. I am passionate about continuous learning and eager to contribute to innovative projects and pursue a fulfilling career in technology.</p>
+        </div>
+        <div class="flex-item">
+            <h1>How I Work</h1>
+            <p>As a dedicated and detail-oriented professional, I approach my work with a strong emphasis on precision and efficiency. My experience as a PHP developer has ingrained in me the importance of writing clean, maintainable code and following best practices in software development. I am adept at problem-solving and enjoy tackling complex challenges with a methodical mindset. In my current studies at Digital Career Institute (DCI), I apply the same diligence and enthusiasm, continually seeking to expand my knowledge and skill set. I believe in the power of collaboration and effective communication, always striving to understand the needs of my team and clients to deliver optimal solutions. My work ethic is driven by a passion for technology and a commitment to excellence, ensuring that I consistently produce high-quality results in all my projects.</p>
+        </div>
+        <div class="flex-item">
+            <h1>My Current Project</h1>
+            <p>Currently, I am channeling my skills and creativity into developing a portfolio website. This project is an exciting opportunity to showcase my technical abilities, highlight my previous work as a PHP developer, and demonstrate the new skills I am acquiring at the Digital Career Institute (DCI). The portfolio site will feature a clean, modern design with a responsive layout to ensure an optimal viewing experience across various devices. It will include sections detailing my professional experience, projects, and the technologies I have mastered. Through this portfolio, I aim to provide potential employers and collaborators with a comprehensive overview of my capabilities and achievements, as well as my commitment to continuous learning and professional growth. This project not only serves as a testament to my journey but also as a dynamic platform to connect with the tech community and explore new opportunities.</p>
+        </div>
+    </div>
+    
+    <div class="footer bg-dark">
+        <div class="container bg-dark">
+            <p>&copy; 2024 Swagatika Pati. All rights reserved.</p>
+            <div class="social-icons bg-dark">
+                <a class="nav-link bg-dark" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="nav-link bg-dark" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a class="nav-link bg-dark" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="nav-link bg-dark" href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
